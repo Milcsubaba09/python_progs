@@ -91,7 +91,7 @@ tca = sum(techn)/tcj
 print ("Techinka átlag:", "%.2f"% tca)
 print ("")
 #------------------------------------------------------------------------
-
+print("Viszlát!")
 
 
 
