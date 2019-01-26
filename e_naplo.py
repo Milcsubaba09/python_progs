@@ -10,9 +10,10 @@ subjects =[
     "Angol",
     "Matek",
     "Környezet",
+    "Ének-Zene",
+    "Vizuális Kúltúra",
     "Testnevelés",
     "Technika",
-    "Stb",
 ]
 
 print("A tantárgyak listája:")
@@ -32,6 +33,10 @@ angol = (5,5,5,5,5,5,5,5,4)
 matek = (5,5,5,5,5,5,5,5,5,4,5,5,5)
 
 korny = (5,5,5,5,5,5,5,5)
+
+enekz = (5,5,5,5,5,5)
+
+vizua = (5,5,4,5,4,5)
 
 testn = (5,5,5,5,5,5,5,5)
 
@@ -56,8 +61,8 @@ oa = sum(olvas)/oj
 print ("Olvasás átlag:", "%.2f"% oa)
 print ("")
 #------------------------------------------------------------------------
-print ("Az Irodalom jegyek", iroda)
-ij = len(iroda)
+print ("Az Irodalom jegyek:", iroda)
+ij = len(iroda)                                     #Irodalom
 ia = sum(iroda)/ij
 print ("Irodalom átlag:", "%.2f"% ia)
 print ("")
@@ -78,6 +83,18 @@ print ("Az Környezet jegyek:", korny)
 kj = len(korny)                                     #Angol
 ka = sum(korny)/kj
 print ("Környezet átlag:", "%.2f"% ka)
+print ("")
+#------------------------------------------------------------------------
+print ("Az Ének-Zene jegyek:", enekz)
+zj = len(enekz)                                     #Ének-Zene
+za = sum(enekz)/zj
+print ("Ének-Zene átlag:", "%.2f"% za)
+print ("")
+
+print ("A Vizuális Kúltúra jegyek:", vizua)
+vj = len(vizua)
+va = sum(vizua)/vj
+print ("Vizuális Kúltúra átlag:", "%.2f"% va)
 print ("")
 #------------------------------------------------------------------------
 print ("A Testnevelés jegyek:", testn)
