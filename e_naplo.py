@@ -1,3 +1,5 @@
+import sys
+
 print ("*="*40)
 print ("Pető Milán negyedikes jegyek.")
 print ("*="*40)
@@ -123,10 +125,4 @@ for o in orarend:
 print("")
 print("Viszlát!")
 
-
-
-
-
-
-
-
+sys.exit(0)
