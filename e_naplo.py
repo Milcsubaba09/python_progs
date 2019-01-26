@@ -12,6 +12,7 @@ subjects =[
     "Környezet",
     "Testnevelés",
     "Technika",
+    "Stb",
 ]
 
 print("A tantárgyak listája:")
@@ -91,6 +92,18 @@ tca = sum(techn)/tcj
 print ("Techinka átlag:", "%.2f"% tca)
 print ("")
 #------------------------------------------------------------------------
+
+orarend = [
+    "Hétfő:Olvasás,Nyelvtan,Környezet,Angol,Matematika,Testnevelés,Informatika",
+    "Kedd:Testnevelés,Matemetika,Technika,Olvasás,Rajz,Rajz",
+    "Szerda:Angol,Testnevelés,Matemetika,Fogalmazás,Etika",
+    "Csütortök:Nyelvtan,Angol,Ének-Zene,Matematika,Testnevelés",
+    "Péntek:Testnevelés,Matemetika,Nyelvtan,Olvasás,Környezet,Ének-Zene",
+]
+print("Heti Órarend:")
+for o in orarend:
+    print (o)
+
 print("Viszlát!")
 
 
