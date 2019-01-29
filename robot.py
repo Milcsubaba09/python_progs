@@ -48,7 +48,7 @@ v = False
 while v != True:
     w = input("Írd be számmal hogy mikor születtél:")
     if len(w) == 0:
-        print("Write somethings")
+        print("Nem írtál semmit!")
         v = False
     else:
         pass
