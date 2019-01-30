@@ -82,7 +82,7 @@ print ("Matek átlag:", "%.2f"% ma)  # Itt meg kiíratom megformázva az eredmé
 print ("")
 #------------------------------------------------------------------------
 print ("Az Környezet jegyek:", korny)
-kj = len(korny)                                     #Angol
+kj = len(korny)                                     #Környezetismeret
 ka = sum(korny)/kj
 print ("Környezet átlag:", "%.2f"% ka)
 print ("")
@@ -92,7 +92,7 @@ zj = len(enekz)                                     #Ének-Zene
 za = sum(enekz)/zj
 print ("Ének-Zene átlag:", "%.2f"% za)
 print ("")
-
+#------------------------------------------------------------------------
 print ("A Vizuális Kúltúra jegyek:", vizua)
 vj = len(vizua)
 va = sum(vizua)/vj
