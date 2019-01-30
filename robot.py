@@ -65,4 +65,6 @@ while v != True:
 print ("")
 print ("Te",w,"születtél.")
 
+print ("Készítette:Pető Milán".center(80))
+
 sys.exit(0)
