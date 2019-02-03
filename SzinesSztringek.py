@@ -26,6 +26,11 @@ elif x == "N" or x == "n":
 else:
     cprint("Ennyire nem rossz hogy nem válaszolsz!!!",color='red')
 
+k = ("Pető Milán")
+cprint(f"A készítő neve:{k}",color='blue')
+
+
+
 sys.exit(0)
 
 
