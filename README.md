@@ -1,5 +1,7 @@
 # Python programok
 
+[![Floobits Status](https://floobits.com/Milcsubaba09/python_progs.svg)](https://floobits.com/Milcsubaba09/python_progs/redirect)
+
 ## Sziasztok
 
 A nevem Milán és 9 éves vagyok.
