@@ -1,6 +1,6 @@
 # Python programok
 
-[![Floobits Status](https://floobits.com/Milcsubaba09/python_progs.svg)](https://floobits.com/Milcsubaba09/python_progs/redirect)
+[![Floobits](https://floobits.com/Milcsubaba09/python_progs.svg)](https://floobits.com/Milcsubaba09/python_progs/redirect)
 
 ## Sziasztok
 
