@@ -13,7 +13,7 @@ Nyugodtan használhatjátok a programjaimat.
 ```python
 Az első python programom.
 
-print("Hello Wrold! ! !")
+print("Hello World! ! !")
 
 ```
 
