@@ -131,6 +131,10 @@ while jj == True:
                         cprint("Megtelt a pajzs mennyiség!",'blue')
                         p = 50
 
+                if pe == 0 or pe < 0:
+                    pe = 0
+
+
             elif x == "N" or x == "n":
                 print("")
                 c = input("Biztosan akarsz csatázni? Igen [I] vagy nem [N]: ")
@@ -159,6 +163,12 @@ while jj == True:
                         cprint(f"XP szinted: {xp}".center(80),'green')
                         print("")
 
+                    if xp == 5:
+                        cprint("Elérted a 5. XP szintet.", 'cyan')
+                        p = p + 25
+                        print("")
+                        cprint("Jutalom: 25 Pajzs".center(100), 'yellow')
+
                     if xp == 10:
                         cprint("Elérted a 10. XP szintet.",'cyan')
                         print("")
@@ -179,9 +189,9 @@ while jj == True:
 
                     if xp == 25:
                         cprint("Elérted a 25. XP szintet.", 'cyan')
-                        p = p + 50
+                        p = p + 25
                         print("")
-                        cprint("Jutalom: 50 Pajzs".center(100), 'yellow')
+                        cprint("Jutalom: 25 Pajzs".center(100), 'yellow')
 
 
                     if a == 2:
@@ -204,7 +214,6 @@ while jj == True:
                         print("")
                         cprint("Vesztettél",'red')
                         print("")
-
                     if e < 0 or e == 0:
                         e = 0
                         print("=" *24)
