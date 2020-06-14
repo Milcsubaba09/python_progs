@@ -17,14 +17,15 @@ pe = 100
 zt = 25
 # Psz a pénz szerzés jele
 psz = 50
-# Pf a élet fizetés jele
+# Ef az élet fizetés jele
 ef = 50
-# Efe a élet fizetés érték
+# Efe az élet fizetés érték
 efe = 50
 # XP a szint jele
 xp = 0
 # Játék újrakezdés
 ch = True
+
 
 # Itt csinálom a range check function-t
 def range_check(question, a, b):
@@ -48,6 +49,7 @@ def range_check(question, a, b):
             cprint("Számot kérek!", 'red')
             y = 0
     return i
+
 
 # A csata végeredménye
 def randcsata():
@@ -157,7 +159,7 @@ while jj == True:
                             cprint(str(seconds - i) + " másodperc kell a csata végéhez",'blue')
                             time.sleep(0.5)
                         print("")
-                        cprint("Sikeresen megnyerted a csatát!",'blue')
+                        cprint("Sikeresen megnyerted a csatát!",'green')
                         print("")
                         cprint("Csatában megszerzett dolgok: Arany, +Pénz gyűjtés, +XP",'cyan')
                         cprint(f"XP szinted: {xp}".center(80),'green')
@@ -193,7 +195,6 @@ while jj == True:
                         print("")
                         cprint("Jutalom: 25 Pajzs".center(100), 'yellow')
 
-
                     if a == 2:
                         pe = pe + 20
                         if p > 0:
@@ -217,16 +218,13 @@ while jj == True:
                     if e < 0 or e == 0:
                         e = 0
                         print("=" *24)
-                        cprint("Elveszteddet a játékot |",'red')
+                        cprint("Elvesztetted a játékot |",'red')
                         print("="*24)
                         ch = True
 
-
-
-
                         while ch == True:
                             print("")
-                            j = input("Szeretnél játszani mégegyet? Igen [I] vagy nem [N]: ")
+                            j = input("Szeretnél játszani még egyet? Igen [I] vagy nem [N]: ")
 
                             if j == "I" or j == "i":
                                 cprint("Rendben", 'blue')
