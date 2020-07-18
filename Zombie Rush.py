@@ -21,7 +21,7 @@ ef = 100
 # Efe a élet vásárlás értéke
 efe = 50
 # XP a szint jele
-xp = 24
+xp = 0
 # Vas a vas jele
 vas = 0
 #ec az energia cella jele
