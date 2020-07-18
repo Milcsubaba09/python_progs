@@ -21,7 +21,7 @@ ef = 100
 # Efe a élet vásárlás értéke
 efe = 50
 # XP a szint jele
-xp = 0
+xp = 24
 # Vas a vas jele
 vas = 0
 #ec az energia cella jele
@@ -97,6 +97,7 @@ while True:
 				pe = 0
 			if pe == 1500 or pe > 1500:
 				pe = 1500
+				cprint("Megtelt a pénz mennyiség",'yellow')
 			print("")
 			cprint(f"Arany: {pe}", 'yellow')
 			cprint(f"Élet: {e}", 'red')
@@ -173,11 +174,15 @@ while True:
 				b = range_check("Mit szeretnél gyártani[1-3]: ", 1, 3)
 
 				if b == 1:
-					if ec == 3 or ec > 3 and kt == 5 or kt > 5:
+					if ec >= 3 and kt >= 5:
 						if e < 1500:
 							ec = ec -3
 							kt = kt -5
 							e = e + 50
+							if ec <= 0:
+								ec = 0
+							if kt <= 0:
+								kt = 0
 						if e > 1500 or e == 1500:
 							cprint("Megtelt az élet mennyiség", 'red')
 							e = 1500
@@ -186,11 +191,15 @@ while True:
 
 
 				if b == 2:
-					if ec == 4 or ec > 4 and vas == 6 or vas > 6:
+					if ec >= 4 and vas >= 6:
 						if p < 50:
 							ec = ec -4
 							vas = vas - 6
 							p = p + 50
+							if ec <= 0:
+								ec = 0
+							if vas <= 0:
+								vas = 0
 						if p > 50 or p == 50:
 							cprint("Megtelt a pajzs mennyiség!", 'blue')
 							p = 50
@@ -260,8 +269,9 @@ while True:
 						cprint("Elérted a 25. XP szintet.", 'cyan')
 						p = p + 50
 						print("")
-						cprint("Jutalom: 50 Pajzs".center(100), 'yellow')
+						cprint("Megnyerted a zombik ellen a háborút! Gratulálok!".center(80),'green')
 						xp25 = 1
+						sys.exit(0)
 
 				if a == 2:
 					pe = pe + 20
@@ -342,7 +352,7 @@ while True:
 
 		if neh == 1:
 			# E az élet jele
-			e = 125
+			e = 100
 			# P a pajzs jele
 			p = 25
 			# Pe a pénz jele
@@ -402,7 +412,7 @@ while True:
 
 		if neh == 3:
 			# E az élet jele
-			e = 75
+			e = 100
 			# P a pajzs jele
 			p = 0
 			# Pe a pénz jele
