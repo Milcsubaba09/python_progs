@@ -89,6 +89,7 @@ while True:
 
 	print("")
 	k = range_check("Válassz menüpontot[1-3]: ", 1, 3)
+	print("="* 80)
 
 	if k == 1:
 
@@ -359,23 +360,24 @@ while True:
 
 
 	if k == 2:
-		print("")
 		cprint("A Játék lényege hogy legyőzd a zombikat és megnyerd a csatákat.", 'red')
 		cprint("Ha vesztettél akkor lemegy az életed és a zombik nagyobbat fognak sebezni.", 'red')
 		cprint("Ha viszont megnyersz egy csatát akkor kapsz XP-t,pénzt és pénz gyűjtést.", 'red')
 		cprint("A pénz gyűjtés azt jelenti hogy minden győzelem után több pénzt fogsz kapni.", 'red')
+		print("=" * 80)
 		print("")
 
 	if k == 3:
-		nehezsegiszint = ["1 = Könnyű",
-						  "2 = Normál",
-						  "3 = Nehéz",
+		nehezsegiszint = ["[1] Könnyű",
+						  "[2] Normál",
+						  "[3] Nehéz",
 						  ]
 		for n in nehezsegiszint:
 			cprint(f"{n}", 'red')
 
 		print("")
 		neh = range_check("Válassz nehézségi szintet[1-3]: ", 1, 3)
+		print("=" * 80)
 
 		if neh == 1:
 			# E az élet jele
