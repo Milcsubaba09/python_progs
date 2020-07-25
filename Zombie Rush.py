@@ -79,13 +79,13 @@ cprint("Üdv a Zombie Rush játékban!".center(80), 'blue')
 print("")
 
 while True:
-	menu = ["1 = Kezdés",
-			"2 = A játékról",
-			"3 = Beállítások",
+	menu = ["[1] Kezdés",
+			"[2] A játékról",
+			"[3] Beállítások",
 			]
 
 	for m in menu:
-		cprint(f"{m}", 'cyan')
+		cprint(f"{m}", 'blue',attrs=['dark', 'bold'])
 
 	print("")
 	k = range_check("Válassz menüpontot[1-3]: ", 1, 3)
@@ -104,110 +104,14 @@ while True:
 			cprint(f"Pajzs: {p}", 'blue')
 			print("")
 
-			fomenu = ["1 = Fejlesztés",
-					  "2 = Gyártás",
-					  "3 = Csata",
-					  ]
-
-			for fm in fomenu:
-				print(fm)
-
+			print("[1] Csata")
+			print("[2] Fejlesztés")
+			print("[3] Gyártás")
+			print()
 			fe = range_check("Válassz menüpontot[1-3]: ", 1, 3)
 			print("="*80)
+
 			if fe == 1:
-				cprint("", 'green', attrs=['dark', 'bold'])
-				cprint(f"Arany: {pe}".center(100), 'yellow')
-
-				print("1 = ", ef, " Arany", efe, "Élet")
-				print("2 = 200 Arany 50 pajzs")
-				print("3 = Kilépés a vásárlásból")
-				print("")
-
-				f = range_check("Mit szeretnél fejleszteni?[1-3]: ", 1, 3)
-				print("="*80)
-				if f == 1:
-					if e < 5000:
-						if pe == ef or pe > ef:
-							e = e + efe
-							pe = pe - ef
-							print("")
-							print("")
-						else:
-							cprint("Ehhez nincs elég pénzed!", 'red')
-							if pe == 0 or pe < 0:
-								pe = 0
-							print("=" * 80)
-					if e == 1500 or e > 1500:
-						cprint("Megtelt az élet mennyiség", 'red')
-						e = 1500
-						print("=" * 80)
-				if f == 2:
-					if p < 50:
-						if pe == 200 or pe >= 200:
-							p = p + 50
-							pe = pe - 200
-							print("")
-							print(pe, "Aranyad,", e, "Életed, és", p, "Pajzsod van.")
-							print("")
-						else:
-							cprint("Ehhez nincs elég pénzed!", 'red')
-							print("=" * 80)
-							if pe == 0 or pe < 0:
-								pe = 0
-					if p == 50 or p > 50:
-						cprint("Megtelt a pajzs mennyiség!", 'blue')
-						p = 50
-						print("=" * 80)
-
-			if fe == 2:
-				print("")
-				print(vas,"vasad,",ec,"energia cellád",kt,"kötszered van!")
-				gyartas = ["1 = Élet (3 Energia cella,5 kötszer/50 élet)",
-						   "2 = Pajzs (4 Energia cella,6 vas/50 pajzs)",
-						   "3 = Kilépés a gyártásból",
-						   ]
-				for gy in gyartas:
-					cprint(f"{gy}",'cyan')
-
-				b = range_check("Mit szeretnél gyártani[1-3]: ", 1, 3)
-				print("="*80)
-				if b == 1:
-					if ec >= 3 and kt >= 5:
-						if e < 1500:
-							ec = ec -3
-							kt = kt -5
-							e = e + 50
-							if ec <= 0:
-								ec = 0
-							if kt <= 0:
-								kt = 0
-						if e > 1500 or e == 1500:
-							cprint("Megtelt az élet mennyiség", 'red')
-							print("="*80)
-							e = 1500
-					else:
-						cprint("Ehhez nincs elég alapanyagod!",'red')
-						print("="* 80)
-
-				if b == 2:
-					if ec >= 4 and vas >= 6:
-						if p < 50:
-							ec = ec -4
-							vas = vas - 6
-							p = p + 50
-							if ec <= 0:
-								ec = 0
-							if vas <= 0:
-								vas = 0
-						if p > 50 or p == 50:
-							cprint("Megtelt a pajzs mennyiség!", 'blue')
-							print("=" * 80)
-							p = 50
-					else:
-						cprint("Ehhez nincs elég alapanyagod!", 'red')
-						print("=" * 80)
-
-			if fe == 3:
 				print("")
 				a = randcsata()
 				cprint("Rendben! Akkor indul a csata!", 'red', attrs=['dark', 'bold'])
@@ -227,7 +131,7 @@ while True:
 					seconds = 5
 
 					for i in range(seconds):
-						cprint("\r %d. másodperc kell a csata végéhez" % (seconds - i), 'blue', end="")
+						cprint("\r%d. másodperc kell a csata végéhez" % (seconds - i), 'blue', end="")
 						time.sleep(0.75)
 					print("")
 					print("=" * 80)
@@ -275,6 +179,34 @@ while True:
 						print("")
 						cprint("Megnyerted a zombik ellen a háborút! Gratulálok!".center(80),'green')
 						xp25 = 1
+						# E az élet jele
+						e = 100
+						# P a pajzs jele
+						p = 0
+						# Pe a pénz jele
+						pe = 100
+						# Zt a zombi támadás jele
+						zt = 25
+						# Psz a pénz szerzés jele
+						psz = 50
+						# Pf a élet fizetés jele
+						ef = 100
+						# Efe a élet vásárlás értéke
+						efe = 50
+						# XP a szint jele
+						xp = 0
+						# Vas a vas jele
+						vas = 0
+						# ec az energia cella jele
+						ec = 0
+						# kt a kötszer jele
+						kt = 0
+
+						xp5 = 0
+						xp10 = 0
+						xp15 = 0
+						xp20 = 0
+						xp25 = 0
 						break
 
 				if a == 2:
@@ -292,7 +224,7 @@ while True:
 					seconds = 5
 
 					for i in range(seconds):
-						cprint("\r %d. másodperc kell a csata végéhez" % (seconds - i), 'blue', end="")
+						cprint("\r%d. másodperc kell a csata végéhez" % (seconds - i), 'blue', end="")
 						time.sleep(0.75)
 					print("")
 					print("=" * 80)
@@ -333,6 +265,96 @@ while True:
 					xp20 = 0
 					xp25 = 0
 					break
+
+
+			if fe == 2:
+				cprint("", 'green', attrs=['dark', 'bold'])
+				cprint(f"Arany: {pe}".center(100), 'yellow')
+
+				cprint(f"[1] {efe} Élet | {ef} Arany",'red')
+				cprint("[2] 50 pajzs | 200 Arany",'red')
+				cprint("[3] Kilépés a vásárlásból",'white')
+				print("")
+
+				f = range_check("Mit szeretnél fejleszteni?[1-3]: ", 1, 3)
+				print("="*80)
+				if f == 1:
+					if e < 5000:
+						if pe == ef or pe > ef:
+							e = e + efe
+							pe = pe - ef
+						else:
+							cprint("Ehhez nincs elég pénzed!", 'red')
+							if pe == 0 or pe < 0:
+								pe = 0
+							print("=" * 80)
+					if e == 1500 or e > 1500:
+						cprint("Megtelt az élet mennyiség", 'red')
+						e = 1500
+						print("=" * 80)
+				if f == 2:
+					if p < 50:
+						if pe == 200 or pe >= 200:
+							p = p + 50
+							pe = pe - 200
+						else:
+							cprint("Ehhez nincs elég pénzed!", 'red')
+							print("=" * 80)
+							if pe == 0 or pe < 0:
+								pe = 0
+					if p == 50 or p > 50:
+						cprint("Megtelt a pajzs mennyiség!", 'red')
+						p = 50
+						print("=" * 80)
+
+			if fe == 3:
+				print("")
+				cprint(f"Vas: {vas}")
+				cprint(f"Energia cella: {ec}",'blue')
+				cprint(f"Kötszer: {kt}",'red')
+				print("")
+				cprint("[1] 100 Élet | 3 Energia cella,4 kötszer",'white')
+				cprint("[2] 25 Pajzs | 2 Energia cella,4 vas",'white')
+				cprint("[3] Kilépés a gyártásból",'white')
+				print("")
+
+				b = range_check("Mit szeretnél gyártani[1-3]: ", 1, 3)
+				print("="*80)
+				if b == 1:
+					if ec >= 3 and kt >= 4:
+						if e < 1500:
+							ec = ec -3
+							kt = kt -4
+							e = e + 100
+							if ec <= 0:
+								ec = 0
+							if kt <= 0:
+								kt = 0
+						if e > 1500 or e == 1500:
+							cprint("Megtelt az élet mennyiség", 'red')
+							print("="*80)
+							e = 1500
+					else:
+						cprint("Ehhez nincs elég alapanyagod!",'red')
+						print("="* 80)
+
+				if b == 2:
+					if ec >= 2 and vas >= 4:
+						if p < 50:
+							ec = ec -2
+							vas = vas - 4
+							p = p + 25
+							if ec <= 0:
+								ec = 0
+							if vas <= 0:
+								vas = 0
+						if p > 50 or p == 50:
+							cprint("Megtelt a pajzs mennyiség!", 'blue')
+							print("=" * 80)
+							p = 50
+					else:
+						cprint("Ehhez nincs elég alapanyagod!", 'red')
+						print("=" * 80)
 
 
 
