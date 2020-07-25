@@ -138,44 +138,44 @@ while True:
 					print("=" * 80)
 					cprint("\nSikeresen megnyerted a csatát!", 'green')
 					print("")
-					cprint("Csatában megszerzett dolgok: Arany, +Pénz gyűjtés, +XP, +Vas, +Energia cella, +Kötszer", 'cyan')
+					cprint(f"Csatában megszerzett tárgyak: +{psz} Arany, +1 Vas, +1 Energia cella, +1 Kötszer, +1 XP", 'cyan')
 					cprint(f"XP szinted: {xp}".center(80), 'green')
 					print("")
 
 				if xp5 == 0:
 					if xp == 5:
-						cprint("Elérted a 5. XP szintet.", 'cyan')
+						cprint("Elérted a 5. XP szintet.", 'blue')
 						if p < 50:
 							p = p + 25
 						print("")
 						cprint("Jutalom: 25 Pajzs".center(100), 'yellow')
 						xp5 = 1
 						if p >= 50:
-							cprint("Megtelt a pajzs mennyiség!",'blue')
+							cprint("Megtelt a pajzs mennyiség!",'red')
 				if xp10 == 0:
 					if xp == 10:
-						cprint(f"Elérted a {xp}. XP szintet.", 'cyan')
+						cprint(f"Elérted a {xp}. XP szintet.", 'blue')
 						print("")
 						cprint("Jutalom: 750 Arany".center(100), 'yellow')
 						pe = pe + 750
 						xp10 = 1
 				if xp15 == 0:
 					if xp == 15:
-						cprint(f"Elérted a {xp}. XP szintet.", 'cyan')
+						cprint(f"Elérted a {xp}. XP szintet.", 'blue')
 						e = e + 25
 						print("")
 						cprint("Jutalom: 25 élet".center(100), 'yellow')
 						xp15 = 1
 				if xp20 == 0:
 					if xp == 20:
-						cprint("Elérted a 20. XP szintet.", 'cyan')
+						cprint("Elérted a 20. XP szintet.", 'blue')
 						pe = pe + 750
 						print("")
 						cprint("Jutalom: 750 Arany".center(100), 'yellow')
 						xp20 = 1
 				if xp25 == 0:
 					if xp == 25:
-						cprint("Elérted a 25. XP szintet.", 'cyan')
+						cprint("Elérted a 25. XP szintet.", 'blue')
 						p = p + 50
 						print("")
 						cprint("Megnyerted a zombik ellen a háborút! Gratulálok!".center(80),'green')
@@ -211,6 +211,17 @@ while True:
 						break
 
 				if a == 2:
+					seconds = 5
+
+					for i in range(seconds):
+						cprint("\r%d. másodperc kell a csata végéhez" % (seconds - i), 'blue', end="")
+						time.sleep(0.75)
+					print("")
+					print("=" * 80)
+					cprint("\nElvesztetted a csatát!", 'red')
+					cprint(f"\nElszenvedett sebzés: {zt}",'red')
+					print("")
+
 					pe = pe + 20
 					if p > 0:
 						p = p - zt
@@ -222,19 +233,12 @@ while True:
 						zt = zt + 5
 					if zt == 500 or zt > 500:
 						zt = 500
-					seconds = 5
-
-					for i in range(seconds):
-						cprint("\r%d. másodperc kell a csata végéhez" % (seconds - i), 'blue', end="")
-						time.sleep(0.75)
-					print("")
-					print("=" * 80)
-					cprint("\nVesztettél", 'red')
-					print("")
 
 				if e < 0 or e == 0:
+					print("="*80)
 					cprint("Elveszteddet a játékot", 'red')
-					cprint(f"{xp} XP szintet érted el.", 'cyan')
+					cprint(f"\n{xp}. XP szintet érted el.", 'cyan')
+					print("="*80)
 					print("")
 					e = 0
 					# E az élet jele
@@ -274,13 +278,13 @@ while True:
 
 				cprint(f"[1] {efe} Élet | {ef} Arany",'red')
 				cprint("[2] 50 pajzs | 200 Arany",'red')
-				cprint("[3] Kilépés a vásárlásból",'white')
+				cprint("[3] Kilépés a fejlesztésből",'white')
 				print("")
 
 				f = range_check("Mit szeretnél fejleszteni?[1-3]: ", 1, 3)
 				print("="*80)
 				if f == 1:
-					if e < 5000:
+					if e < 1500:
 						if pe == ef or pe > ef:
 							e = e + efe
 							pe = pe - ef
@@ -350,7 +354,7 @@ while True:
 							if vas <= 0:
 								vas = 0
 						if p > 50 or p == 50:
-							cprint("Megtelt a pajzs mennyiség!", 'blue')
+							cprint("Megtelt a pajzs mennyiség!", 'red')
 							print("=" * 80)
 							p = 50
 					else:
@@ -361,9 +365,8 @@ while True:
 
 	if k == 2:
 		cprint("A Játék lényege hogy legyőzd a zombikat és megnyerd a csatákat.", 'red')
-		cprint("Ha vesztettél akkor lemegy az életed és a zombik nagyobbat fognak sebezni.", 'red')
-		cprint("Ha viszont megnyersz egy csatát akkor kapsz XP-t,pénzt és pénz gyűjtést.", 'red')
-		cprint("A pénz gyűjtés azt jelenti hogy minden győzelem után több pénzt fogsz kapni.", 'red')
+		cprint("Ha vesztettél akkor lemegy az életed és vagy a pajzsod,\nvalamint a zombik nagyobbat fognak sebezni.", 'red')
+		cprint("Ha viszont megnyersz egy csatát akkor kapsz XP-t,\npénzt,vasat,energia cellát és kötszert.", 'red')
 		print("=" * 80)
 		print("")
 
