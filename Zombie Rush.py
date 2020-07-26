@@ -34,7 +34,7 @@ xp10 = 0
 xp15 = 0
 xp20 = 0
 xp25 = 0
-
+ep = 0
 
 # Játék újrakezdés
 ch = True
@@ -223,15 +223,25 @@ while True:
 					print("")
 
 					pe = pe + 20
-					if p > 0:
+
+					if p >= zt:
 						p = p - zt
-					if p == 1 or p < 1:
+
+					elif p < zt:
+						ep = zt - p
 						p = 0
-					if p == 0:
+						e = e - ep
+						ep = 0
+
+
+					elif p <= 0:
 						e = e - zt
+						p = 0
+
 					if zt < 500:
 						zt = zt + 5
-					if zt == 500 or zt > 500:
+
+					if zt >= 500:
 						zt = 500
 
 				if e < 0 or e == 0:
@@ -269,6 +279,7 @@ while True:
 					xp15 = 0
 					xp20 = 0
 					xp25 = 0
+					ep = 0
 					break
 
 
@@ -411,7 +422,7 @@ while True:
 			xp15 = 0
 			xp20 = 0
 			xp25 = 0
-
+			ep = 0
 		if neh == 2:
 			# E az élet jele
 			e = 100
@@ -441,7 +452,7 @@ while True:
 			xp15 = 0
 			xp20 = 0
 			xp25 = 0
-
+			ep = 0
 		if neh == 3:
 			# E az élet jele
 			e = 100
@@ -470,3 +481,4 @@ while True:
 			xp15 = 0
 			xp20 = 0
 			xp25 = 0
+			ep = 0
