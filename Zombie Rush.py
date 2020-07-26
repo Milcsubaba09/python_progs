@@ -100,9 +100,9 @@ while True:
 				pe = 1500
 				cprint("Megtelt a pénz mennyiség",'yellow')
 			print("")
-			cprint(f"Arany: {pe}/1500", 'yellow')
-			cprint(f"Élet: {e}/1500", 'red')
-			cprint(f"Pajzs: {p}/50", 'blue')
+			cprint(f"Arany: {pe}", 'yellow')
+			cprint(f"Élet: {e}", 'red')
+			cprint(f"Pajzs: {p}", 'blue')
 			print("")
 
 			print("[1] Csata")
