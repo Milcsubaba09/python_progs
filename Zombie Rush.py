@@ -100,9 +100,9 @@ while True:
 				pe = 1500
 				cprint("Megtelt a pénz mennyiség",'yellow')
 			print("")
-			cprint(f"Arany: {pe}", 'yellow')
-			cprint(f"Élet: {e}", 'red')
-			cprint(f"Pajzs: {p}", 'blue')
+			cprint(f"Arany: {pe}/1500", 'yellow')
+			cprint(f"Élet: {e}/750", 'red')
+			cprint(f"Pajzs: {p}/100", 'blue')
 			print("")
 
 			print("[1] Csata")
@@ -151,33 +151,34 @@ while True:
 				if xp5 == 0:
 					if xp == 5:
 						cprint("Elérted a 5. XP szintet.", 'blue')
-						if p < 50:
-							p = p + 25
+						if p < 100:
+							p = p + 50
 						print("")
-						cprint("Jutalom: 25 Pajzs".center(100), 'yellow')
+						cprint("Jutalom: 50 Pajzs".center(100), 'yellow')
 						xp5 = 1
-						if p >= 50:
+						if p >= 100:
 							cprint("Megtelt a pajzs mennyiség!",'red')
 				if xp10 == 0:
 					if xp == 10:
 						cprint(f"Elérted a {xp}. XP szintet.", 'blue')
 						print("")
-						cprint("Jutalom: 750 Arany".center(100), 'yellow')
-						pe = pe + 750
+						cprint("Jutalom: 250 Arany".center(100), 'yellow')
+						pe = pe + 250
 						xp10 = 1
 				if xp15 == 0:
 					if xp == 15:
 						cprint(f"Elérted a {xp}. XP szintet.", 'blue')
-						e = e + 25
+						e = e + 100
 						print("")
-						cprint("Jutalom: 25 élet".center(100), 'yellow')
+						cprint("Jutalom: 100 élet".center(100), 'yellow')
 						xp15 = 1
+
 				if xp20 == 0:
 					if xp == 20:
 						cprint("Elérted a 20. XP szintet.", 'blue')
-						pe = pe + 750
+						pe = pe + 250
 						print("")
-						cprint("Jutalom: 750 Arany".center(100), 'yellow')
+						cprint("Jutalom: 250 Arany".center(100), 'yellow')
 						xp20 = 1
 				if xp25 == 0:
 					if xp == 25:
@@ -300,14 +301,14 @@ while True:
 				cprint(f"Arany: {pe}".center(100), 'yellow')
 
 				cprint(f"[1] {efe} Élet | {ef} Arany",'red')
-				cprint("[2] 50 pajzs | 200 Arany",'red')
+				cprint("[2] 100 pajzs | 250 Arany",'red')
 				cprint("[3] Kilépés a fejlesztésből",'white')
 				print("")
 
 				f = range_check("Mit szeretnél fejleszteni?[1-3]: ", 1, 3)
 				print("="*80)
 				if f == 1:
-					if e < 1500:
+					if e < 750:
 						if pe == ef or pe > ef:
 							e = e + efe
 							pe = pe - ef
@@ -316,23 +317,23 @@ while True:
 							if pe == 0 or pe < 0:
 								pe = 0
 							print("=" * 80)
-					if e == 1500 or e > 1500:
+					if e == 750 or e > 750:
 						cprint("Megtelt az élet mennyiség", 'red')
-						e = 1500
+						e = 750
 						print("=" * 80)
 				if f == 2:
-					if p < 50:
-						if pe == 200 or pe >= 200:
-							p = p + 50
-							pe = pe - 200
+					if p < 100:
+						if pe == 250 or pe >= 250:
+							p = p + 100
+							pe = pe - 250
 						else:
 							cprint("Ehhez nincs elég pénzed!", 'red')
 							print("=" * 80)
 							if pe == 0 or pe < 0:
 								pe = 0
-					if p == 50 or p > 50:
+					if p == 100 or p > 100:
 						cprint("Megtelt a pajzs mennyiség!", 'red')
-						p = 50
+						p = 100
 						print("=" * 80)
 
 			if fe == 3:
@@ -342,7 +343,7 @@ while True:
 				cprint(f"Kötszer: {kt}",'red')
 				print("")
 				cprint("[1] 100 Élet | 3 Energia cella,4 kötszer",'white')
-				cprint("[2] 25 Pajzs | 2 Energia cella,4 vas",'white')
+				cprint("[2] 50 Pajzs | 3 Energia cella,5 vas",'white')
 				cprint("[3] Kilépés a gyártásból",'white')
 				print("")
 
@@ -350,7 +351,7 @@ while True:
 				print("="*80)
 				if b == 1:
 					if ec >= 3 and kt >= 4:
-						if e < 1500:
+						if e < 750:
 							ec = ec -3
 							kt = kt -4
 							e = e + 100
@@ -358,28 +359,28 @@ while True:
 								ec = 0
 							if kt <= 0:
 								kt = 0
-						if e > 1500 or e == 1500:
+						if e > 750 or e == 750:
 							cprint("Megtelt az élet mennyiség", 'red')
 							print("="*80)
-							e = 1500
+							e = 750
 					else:
 						cprint("Ehhez nincs elég alapanyagod!",'red')
 						print("="* 80)
 
 				if b == 2:
 					if ec >= 2 and vas >= 4:
-						if p < 50:
-							ec = ec -2
-							vas = vas - 4
-							p = p + 25
+						if p < 100:
+							ec = ec -3
+							vas = vas - 5
+							p = p + 50
 							if ec <= 0:
 								ec = 0
 							if vas <= 0:
 								vas = 0
-						if p > 50 or p == 50:
+						if p > 100 or p == 100:
 							cprint("Megtelt a pajzs mennyiség!", 'red')
 							print("=" * 80)
-							p = 50
+							p = 100
 					else:
 						cprint("Ehhez nincs elég alapanyagod!", 'red')
 						print("=" * 80)
