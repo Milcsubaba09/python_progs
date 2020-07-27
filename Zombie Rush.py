@@ -128,12 +128,18 @@ while True:
 					vas = vas + 1
 					ec = ec + 1
 					kt = kt + 1
+					second1 = 9
+					second2 = 3
 
-					seconds = 5
 
-					for i in range(seconds):
-						cprint("\r%d. másodperc kell a csata végéhez" % (seconds - i), 'blue', end="")
-						time.sleep(0.75)
+					for i in range(second1):
+						cprint("▬", 'blue', end="")
+						time.sleep(0.25)
+
+					for i in range(second2):
+						cprint("▬", 'red', end="")
+						time.sleep(0.25)
+
 					print("")
 					print("=" * 80)
 					cprint("\nSikeresen megnyerted a csatát!", 'green')
@@ -211,11 +217,17 @@ while True:
 						break
 
 				if a == 2:
-					seconds = 5
+					second1 = 3
+					second2 = 9
 
-					for i in range(seconds):
-						cprint("\r%d. másodperc kell a csata végéhez" % (seconds - i), 'blue', end="")
-						time.sleep(0.75)
+					for i in range(second1):
+						cprint("▬", 'blue', end="")
+						time.sleep(0.25)
+
+					for i in range(second2):
+						cprint("▬", 'red', end="")
+						time.sleep(0.25)
+
 					print("")
 					print("=" * 80)
 					cprint("\nElvesztetted a csatát!", 'red')
